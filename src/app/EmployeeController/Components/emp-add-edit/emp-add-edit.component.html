@@ -1,0 +1,115 @@
+<form [formGroup]="Empregister" (ngSubmit)="HandleSubmit()">
+    <mat-stepper [linear]="isLinear" #stepper>
+
+        <mat-step [stepControl]="Basicform">
+
+            <div formGroupName="basic">
+                <ng-template matStepLabel>Fill Basic Details</ng-template>
+
+                <mat-form-field>
+                    <mat-label>EmployeeCode</mat-label>
+                    <input matInput type="text"  name="EmployeeCode"  formControlName="EmployeeCode" placeholder="EmployeeCode" maxlength="8"
+                      autocomplete="off">
+                  </mat-form-field>
+                  
+                <mat-form-field class="leftform">
+                    <mat-label>EmployeeName</mat-label>
+                    <input matInput type="text"  name="EmployeeName"  formControlName="EmployeeName" placeholder="EmployeeName" maxlength="8"
+                      autocomplete="off">
+                  </mat-form-field>
+            
+                  <mat-form-field class="leftform" appearance="fill">
+                    <mat-label>Department</mat-label>
+                    <mat-select name="Department" (change)="ChangeDepartment($event)" class="form-control" formControlName="Department">
+                      <mat-option placeholder="Department" *ngFor="let dep of DepartmentList" [value]="dep.value">
+                        {{dep.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>DateOfJoining</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="DateOfJoining">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  
+                  <mat-form-field class="leftform"  appearance="fill">
+                    <mat-label>DateofResignation</mat-label>
+                    <input matInput [matDatepicker]="pickerr" formControlName="DateofResignation">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerr"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerr></mat-datepicker>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="Gender">
+                      <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                        {{gender.gendervalue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+    
+                  <mat-form-field appearance="fill">
+                    <mat-label>IsInternetAvailable</mat-label>
+                    <mat-select formControlName="IsInternetAvailable">
+                      <mat-option *ngFor="let internet of internets" [value]="internet.value">
+                        {{internet.internetavailablevalue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+            </div>
+
+            <div>
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+
+        </mat-step>
+        <mat-step [stepControl]="contactform" label="Fill out contact info">
+            <div formGroupName="contact">
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Email" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Phone</mat-label>
+                    <input matInput formControlName="phone" placeholder="Phone" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fax</mat-label>
+                    <input matInput formControlName="fax" placeholder="Fax" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+                    <button mat-raised-button color="primary" matStepperNext>Next</button>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="addressform" label="Fill out address">
+            <div formGroupName="address">
+                <mat-form-field appearance="fill">
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName="street" placeholder="street" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city" placeholder="City" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>PIN</mat-label>
+                    <input matInput formControlName="pin" placeholder="Pin" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+                    <button mat-raised-button color="accent">Submit</button>
+                </div>
+            </div>
+        </mat-step>
+
+    </mat-stepper>
+</form>
