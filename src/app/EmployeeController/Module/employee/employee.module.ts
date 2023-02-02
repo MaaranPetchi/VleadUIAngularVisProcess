@@ -27,7 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatStepperModule} from '@angular/material/stepper';
 import { EmpAddEditComponent } from '../../Components/emp-add-edit/emp-add-edit.component';
 import { IndexemployeeComponent } from '../../Components/indexemployee/indexemployee.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [EmpAddEditComponent,IndexemployeeComponent],
@@ -54,7 +54,8 @@ import { IndexemployeeComponent } from '../../Components/indexemployee/indexempl
     MatSortModule,
     MatSnackBarModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ]
 })
 export class EmployeeModule { }

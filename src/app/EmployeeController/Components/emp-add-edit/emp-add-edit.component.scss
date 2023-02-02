@@ -1,32 +1,82 @@
 .content {
-    padding-top: 10px;
+  padding-top: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+
+  mat-form-field {
+    width: 100%;
   }
-  .row {
-    display: flex;
-    gap: 10px;
-  
-    mat-form-field {
-      width: 100%;
-    }
+}
+
+.action {
+  padding: 0px 25px 20px;
+
+  button {
+    flex: 1;
   }
-  
-  .action {
-    padding: 0px 25px 20px;
-    button {
-      flex: 1;
-    }
-  }
-  
-  .mat-stepper-horizontal {
-    margin-top: 8px;
-  }
-  
-  .mat-mdc-form-field {
-    margin-top: 16px;
-  }
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
 
 
 .leftform {
-    margin-top: 16px;
-    margin-left: 129px;
+  margin-top: 16px;
+  margin-left: 129px;
+}
+
+.formbox {
+  height: 500px;
+}
+
+#leftform {
+  margin-top: 16px;
+  margin-left: 129px;
+}
+.Destination{
+  margin-top: 16px;
+  margin-left: 140px;
+}
+
+.mat-mdc-form-field-infix {
+  flex: auto;
+  min-width: 0;
+  width: 240px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body{
+  background-image: linear-gradient(to right bottom, #e3cbe1, #dacfed, #cbd4f8, #b8dbfd, #a5e1fc, #99dff7, #8ddef2, #82dceb, #73d2e7, #64c9e4, #56bfe0, #48b5dc);
+ 
+ background-attachment: fixed;
+
 }
