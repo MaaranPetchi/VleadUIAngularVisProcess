@@ -21,7 +21,7 @@
                     <br>
                     <mat-form-field appearance="fill">
                         <mat-label>Department</mat-label>
-                        <mat-select name="Department" (change)="ChangeDepartment($event)" class="form-control"
+                        <mat-select name="Department" id="formdropdown" class="form-control"
                             formControlName="Department">
                             <mat-option placeholder="Department" *ngFor="let dep of DepartmentList" [value]="dep.value">
                                 {{dep.viewValue}}
@@ -62,7 +62,7 @@
                     </mat-form-field>
                     <mat-form-field class="leftform" appearance="fill">
                         <mat-label>ResignReasons</mat-label>
-                        <mat-select name="ResignReasons" class="form-control" formControlName="ResignReasons">
+                        <mat-select name="ResignReasons"  id="formdropdown"  class="form-control" formControlName="ResignReasons">
                             <mat-option *ngFor="let resignation of resignations" [value]="resignation.value">
                                 {{resignation.Resignationvalue}}
                             </mat-option>
@@ -79,7 +79,7 @@
                     </mat-form-field>
                     <mat-form-field class="Destination" appearance="fill">
                         <mat-label>Destination</mat-label>
-                        <mat-select name="Destination" (change)="ChangeDestination($event)" class="form-control"
+                        <mat-select name="Destination" class="form-control"
                             formControlName="Destination">
                             <mat-option placeholder="Destination" *ngFor="let des of DestinationList"
                                 [value]="des.value">
@@ -130,13 +130,14 @@
 
             </mat-step>
 
+            
             <!--Second page starts multistepform -->
             <mat-step [stepControl]="contactform" label="Fill out contact info">
                 <div formGroupName="contact">
                     <!--ReportingManager1 dropdown-->
                     <mat-form-field class="ReportingManager1" appearance="fill">
                         <mat-label>ReportingManager1</mat-label>
-                        <mat-select name="ReportingManager1" (change)="ReportingManager1($event)" class="form-control"
+                        <mat-select name="ReportingManager1" id="formdropdown" class="form-control"
                             formControlName="ReportingManager1">
                             <mat-option placeholder="ReportingManager1"
                                 *ngFor="let reportingManager1 of ReportingManager1List"
@@ -148,7 +149,7 @@
                     <!--ReportingLeader1 dropdown-->
                     <mat-form-field class="leftform" appearance="fill">
                         <mat-label>ReportingLeader1</mat-label>
-                        <mat-select name="ReportingLeader1" (change)="ReportingLeader1($event)" class="form-control"
+                        <mat-select name="ReportingLeader1" id="formdropdown" class="form-control"
                             formControlName="ReportingLeader1">
                             <mat-option placeholder="ReportingLeader1"
                                 *ngFor="let reportingLeader1 of ReportingLeader1List" [value]="reportingLeader1.value">
@@ -162,7 +163,7 @@
                     <!--ReportingManager2 dropdown-->
                     <mat-form-field class="ReportingManager2" appearance="fill">
                         <mat-label>ReportingManager2</mat-label>
-                        <mat-select name="ReportingManager1" class="form-control" formControlName="ReportingManager2">
+                        <mat-select name="ReportingManager1" class="form-control" id="formdropdown" formControlName="ReportingManager2">
                             <mat-option placeholder="ReportingManager2"
                                 *ngFor="let reportingManager2 of ReportingManager2List"
                                 [value]="reportingManager2.value">
@@ -175,7 +176,7 @@
                     <!--ReportingLeader2 dropdown-->
                     <mat-form-field class="leftform" appearance="fill">
                         <mat-label>ReportingLeader2</mat-label>
-                        <mat-select name="ReportingLeader2" class="form-control" formControlName="ReportingLeader2">
+                        <mat-select name="ReportingLeader2" class="form-control" id="formdropdown" formControlName="ReportingLeader2">
                             <mat-option placeholder="ReportingLeader2"
                                 *ngFor="let reportingLeader2 of ReportingLeader2List" [value]="reportingLeader2.value">
                                 {{reportingLeader2.viewValue}}
@@ -195,7 +196,7 @@
                     <!--EmployeeHierarchy dropdown-->
                     <mat-form-field class="leftform" appearance="fill">
                         <mat-label>EmployeeHierarchy</mat-label>
-                        <mat-select name="EmployeeHierarchy" (change)="ReportingManager1($event)" class="form-control"
+                        <mat-select name="EmployeeHierarchy" id="formdropdown" class="form-control"
                             formControlName="EmployeeHierarchy">
                             <mat-option placeholder="EmployeeHierarchy"
                                 *ngFor="let employeeHierarchy of EmployeeHierarchyList"
@@ -280,10 +281,7 @@
                           </mat-error>
                         </mat-form-field>
                       </div>
-                      <!--Checkbox is to be same as present-->
-                      <!-- <p><b>Permanent Address <label><input type="checkbox" (change)="showHideText()"  value="" id="chk">Same as
-                            Present Address</label></b></p> -->
-                      <!--Checkbox is to be same as present-->
+                     
                     </div>
                     <div class="row">
                       <div class="col">

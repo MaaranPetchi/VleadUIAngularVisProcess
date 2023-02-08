@@ -63,23 +63,6 @@ export class EmpAddEditComponent implements OnInit {
   EmployeeHierarchyList: any;
 
 
-  //department change event
-  ChangeDepartment(e: any) {
-    console.log(e.target.value)
-  }
-  //Destination change event
-  ChangeDestination(f: any) {
-    console.log(f.target.value)
-  }
-  //ReportingManager1 change event
-  ReportingManager1(g: any) {
-    console.log(g.target.value)
-  }
-  //ReportingLeader1 change event
-  ReportingLeader1(h: any) {
-    console.log(h.target.value)
-  }
-
   constructor(private builder: FormBuilder, 
     private service: EmployeeService,
      private _dialogRef: MatDialogRef<EmpAddEditComponent>,

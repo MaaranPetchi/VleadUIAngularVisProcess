@@ -14,6 +14,7 @@
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
     </mat-form-field>
+
   
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" matSort>
@@ -35,43 +36,23 @@
           <td mat-cell *matCellDef="let row"> {{row.EmployeeName}}</td>
         </ng-container>
   
-        <ng-container matColumnDef="Department">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Department </th>
-          <td mat-cell *matCellDef="let row"> {{row.Department}}</td>
+        <ng-container matColumnDef="Divisions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Divisions </th>
+          <td mat-cell *matCellDef="let row"> {{row.Divisions}}</td>
         </ng-container>
   
-        <ng-container matColumnDef="Destination">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Destination </th>
-          <td mat-cell *matCellDef="let row"> {{row.Destination }}</td>
-        </ng-container>
-  
-        <ng-container matColumnDef="Proficiency">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Proficiency </th>
-          <td mat-cell *matCellDef="let row"> {{row.Proficiency}}</td>
-        </ng-container>
-  
-        <ng-container matColumnDef="ReportingManager">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> ReportingManager </th>
-          <td mat-cell *matCellDef="let row"> {{row.ReportingManager}}</td>
-        </ng-container>
-  
-        <ng-container matColumnDef="ReportingLeader">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> ReportingLeader </th>
-          <td mat-cell *matCellDef="let row"> {{row.ReportingLeader}}</td>
-        </ng-container>
-
   
         <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-          <td mat-cell *matCellDef="let row">
-            <button mat-icon-button color="primary" (click)="openEditForm(row)">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </td>
-        </ng-container>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="openEditForm(row)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

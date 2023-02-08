@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 //import employee module
 import { EmployeeModule } from './EmployeeController/Module/employee/employee.module';
+
+//import employeevsdivision module
+import { EmployeevsdivisionModule } from './EmployeeVsDivision/Module/employeevsdivision/employeevsdivision.module';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './Login/login/login.component';
@@ -15,10 +18,8 @@ import { IndexComponent } from './LandingPage/index/index.component';
 @NgModule({
   declarations: [
     AppComponent,
-   LoginComponent,
-   IndexComponent,
-  
-   
+    LoginComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,9 @@ import { IndexComponent } from './LandingPage/index/index.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    EmployeeModule
+    EmployeeModule,
+    EmployeevsdivisionModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
